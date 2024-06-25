@@ -10,7 +10,7 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
     {
-      hello = pkgs.callPackage ./pkgs/hello.nix { };
+      stylepak = pkgs.callPackage ./pkgs/stylepak.nix { };
     };
   };
 }
