@@ -10,7 +10,8 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
     {
-      stylepak = pkgs.callPackage ./pkgs/stylepak.nix { };
+      plymouth-spinnerv2-theme = pkgs.callPackage ./pkgs/plymouth-spinnerv2-theme.nix { };
+      stylepak                 = pkgs.callPackage ./pkgs/stylepak.nix { };
     };
   };
 }
