@@ -17,4 +17,6 @@ pkgs.piper.overrideAttrs (_:
   };
 
   mesonFlags = [ "-Druntime-dependency-checks=false" ];
+
+  meta.description = "GTK frontend for ratbagd mouse config daemon (latest Git commit)";
 })

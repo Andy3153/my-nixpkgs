@@ -23,4 +23,6 @@ pkgs.openrgb-with-all-plugins.overrideAttrs (_:
     substituteInPlace scripts/build-udev-rules.sh \
       --replace "/usr/bin/env chmod" "${lib.getExe' pkgs.coreutils "chmod"}"
   '';
+
+  meta.description = "Open source RGB lighting control (latest Git commit)";
 })
