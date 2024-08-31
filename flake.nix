@@ -17,7 +17,6 @@
     in
     {
       plymouth-spinnerv2-theme = pkgs.callPackage ./pkgs/plymouth-spinnerv2-theme.nix { };
-      stylepak                 = pkgs.callPackage ./pkgs/stylepak.nix { };
       waybar-weather           = pkgs.callPackage ./pkgs/waybar-weather.nix { rev = hyprlandRiceRev; hash = hyprlandRiceHash; };
     };
   };
