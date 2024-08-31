@@ -18,6 +18,7 @@
     {
       libratbag-git            = pkgs.callPackage ./pkgs/libratbag-git.nix            { };
       openrgb-git              = pkgs.callPackage ./pkgs/openrgb-git.nix              { };
+      piper-git                = pkgs.callPackage ./pkgs/piper-git.nix                { };
       plymouth-spinnerv2-theme = pkgs.callPackage ./pkgs/plymouth-spinnerv2-theme.nix { };
       waybar-weather           = pkgs.callPackage ./pkgs/waybar-weather.nix           { rev = hyprlandRiceRev; hash = hyprlandRiceHash; };
     };
