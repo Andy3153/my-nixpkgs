@@ -7,14 +7,14 @@
 pkgs.openrgb-with-all-plugins.overrideAttrs (_:
 {
   pname   = "openrgb-git";
-  version = "0-unstable-2024-08-30";
+  version = "0-unstable-2024-09-05";
 
   src = pkgs.fetchFromGitLab
   {
     owner = "CalcProgrammer1";
     repo  = "OpenRGB";
-    rev   = "406350f5f5e3f3362a7a0b7e786647fbc17a98c9";
-    hash  = "sha256-XuC9HHWdvNH6QJYE1G5cY+/N9n2nXAIvZ07AdMtZQIw=";
+    rev   = "a6758252249f72ea785182e5b2cd1075c904d81b";
+    hash  = "sha256-2jh0pORY3kz0zf1pzAgWOMRnWbwhzl1y509fh21RYSE=";
   };
 
   postPatch =
