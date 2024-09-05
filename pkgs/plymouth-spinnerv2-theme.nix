@@ -1,4 +1,10 @@
-# vim: set fenc=utf-8 ts=2 sw=0 sts=0 sr et si tw=0 fdm=marker fmr={{{,}}}:
+## vim: set fenc=utf-8 ts=2 sw=0 sts=0 sr et si tw=0 fdm=marker fmr={{{,}}}:
+##
+## Spinner v2 Plymouth theme
+##
+## https://github.com/Andy3153/plymouth-spinnerv2-theme
+##
+
 {
   stdenvNoCC,
   fetchFromGitHub,
