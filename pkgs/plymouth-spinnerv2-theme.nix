@@ -19,8 +19,6 @@ stdenvNoCC.mkDerivation rec
   pname   = "plymouth-${themename}-theme";
   version = "sdf";
 
-  #src = /home/andy3153/src/plymouth-themes/plymouth-spinnerv2-theme;
-
   src = fetchFromGitHub
   {
     owner = "Andy3153";
@@ -50,7 +48,7 @@ stdenvNoCC.mkDerivation rec
     description     = "A Plymouth theme loosely based on the default BGRT theme";
     longDescription = "Plymouth theme with the ACPI BGRT graphics on the background, custom elements, spinner animation from adi1090x/plymouth-themes and the NixOS logo at the bottom";
     homepage        = "https://github.com/Andy3153/plymouth-spinnerv2-theme";
-    #license         = lib.licenses.gpl3Only;
+    license         = lib.licenses.gpl2;
 
     maintainers     = with lib.maintainers; [ Andy3153 ];
     platforms       = lib.platforms.linux;
