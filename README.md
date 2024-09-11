@@ -81,5 +81,5 @@ After adding the input, the packages can be used in your configuration like this
 | openrgb-git              | Open source RGB lighting control (latest Git commit)                                                                                                                                                           |
 | piper-git                | GTK frontend for ratbagd mouse config daemon (latest Git commit)                                                                                                                                               |
 | plymouth-spinnerv2-theme | Plymouth theme with the ACPI BGRT graphics on the background, custom elements, spinner animation from [adi1090x/plymouth-themes](https://github.com/adi1090x/plymouth-themes) and the NixOS logo at the bottom |
-| waybar-weather           | My weather script for Waybar                                                                                                                                                                                   |
+| weather4bar              | A Python script that shows weather info for the current location.                                                                                                                                              |
 <!-- }}} -->
