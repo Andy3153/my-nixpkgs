@@ -19,7 +19,7 @@ pkgs.openrgb-with-all-plugins.overrideAttrs (_:
   {
     owner = "CalcProgrammer1";
     repo  = "OpenRGB";
-    rev   = "a6758252249f72ea785182e5b2cd1075c904d81b";
+    rev   = "c84932df4625b9f8028b0352ce5d7247de8099c1";
     hash  = "sha256-2jh0pORY3kz0zf1pzAgWOMRnWbwhzl1y509fh21RYSE=";
   };
 
