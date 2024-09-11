@@ -59,7 +59,7 @@ python3Packages.buildPythonApplication rec
 
       It's useful for window managers where you don't get this functionality out of the box like in a desktop environment.
     '';
-    homepage        = "https://github.com/Andy3153/hyprland-rice";
+    homepage        = "https://github.com/Andy3153/${pname}";
     license         = lib.licenses.gpl2;
 
     mainProgram     = pname;
