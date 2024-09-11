@@ -47,7 +47,7 @@ stdenvNoCC.mkDerivation rec
   {
     description     = "A Plymouth theme loosely based on the default BGRT theme";
     longDescription = "Plymouth theme with the ACPI BGRT graphics on the background, custom elements, spinner animation from adi1090x/plymouth-themes and the NixOS logo at the bottom";
-    homepage        = "https://github.com/Andy3153/plymouth-spinnerv2-theme";
+    homepage        = "https://github.com/Andy3153/${pname}";
     license         = lib.licenses.gpl2;
 
     maintainers     = with lib.maintainers; [ Andy3153 ];
