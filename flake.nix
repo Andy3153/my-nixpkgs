@@ -16,6 +16,7 @@
       # }}}
     in
     {
+      batnotifsd               = pkgs.callPackage ./pkgs/batnotifsd.nix               { };
       libratbag-git            = pkgs.callPackage ./pkgs/libratbag-git.nix            { };
       openrgb-git              = pkgs.callPackage ./pkgs/openrgb-git.nix              { };
       piper-git                = pkgs.callPackage ./pkgs/piper-git.nix                { };

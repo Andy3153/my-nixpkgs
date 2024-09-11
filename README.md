@@ -76,6 +76,7 @@ After adding the input, the packages can be used in your configuration like this
 <!-- {{{ Package table -->
 | Package                  | Description                                                                                                                                                                                                    |
 | :-----:                  | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| batnotifsd               | A Python script that sends notifications about the battery's status.                                                                                                                                           |
 | libratbag-git            | Configuration library for gaming mice (latest Git commit)                                                                                                                                                      |
 | openrgb-git              | Open source RGB lighting control (latest Git commit)                                                                                                                                                           |
 | piper-git                | GTK frontend for ratbagd mouse config daemon (latest Git commit)                                                                                                                                               |
