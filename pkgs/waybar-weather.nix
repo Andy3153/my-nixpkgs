@@ -9,7 +9,6 @@
   python3Packages,
   fetchFromGitHub,
   lib,
-  pkgs,
 
   rev  ? null,
   hash ? null,
@@ -21,7 +20,7 @@ python3Packages.buildPythonApplication rec
   version = "nover";
   format  = "other";
 
-  propagatedBuildInputs = with pkgs.python3Packages;
+  dependencies = with python3Packages;
   [
     requests
   ];
@@ -37,7 +36,7 @@ python3Packages.buildPythonApplication rec
   installPhase =
   ''
     mkdir -p $out/bin
-    cp dotconfig/waybar/scripts/weather.py $out/bin/waybar-weather
+    cp $src/dotconfig/waybar/scripts/weather.py $out/bin/waybar-weather
   '';
 
   meta =
