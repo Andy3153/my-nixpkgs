@@ -18,7 +18,7 @@
 python3Packages.buildPythonApplication rec
 {
   pname   = "batnotifsd";
-  version = "1.0.1";
+  version = "1.0.4";
 
   pyproject    = true;
   build-system = [ python3Packages.hatchling ];
@@ -40,7 +40,7 @@ python3Packages.buildPythonApplication rec
   src = fetchPypi
   {
     inherit pname version;
-    hash = "sha256-R9erJiGfg3cCOLaoADriaFonon7osBB3nBQwXB9LNKE=";
+    hash = "sha256-ymFPXpPEdN6SgxOsIGRDqtOEk1fwdR8GD6qOa9ZMJMw=";
   };
 
   postInstall =
