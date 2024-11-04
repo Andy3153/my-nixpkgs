@@ -15,7 +15,7 @@
 python3Packages.buildPythonApplication rec
 {
   pname   = "weather4bar";
-  version = "1.0.1";
+  version = "1.0.2";
 
   pyproject    = true;
   build-system = [ python3Packages.hatchling ];
@@ -28,7 +28,7 @@ python3Packages.buildPythonApplication rec
   src = fetchPypi
   {
     inherit pname version;
-    hash = "sha256-8YLCC8CA2TFYJIwx/eRdDzaup/NS6hXMsKfwFU0pNjU=";
+    hash = "sha256-INtO+MBTYMGmDIQIqSybeqvBg691CgxRvwxEPAGEV9A=";
   };
 
   postInstall =
