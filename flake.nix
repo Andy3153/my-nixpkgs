@@ -17,6 +17,7 @@
       openrgb-git              = pkgs.callPackage ./pkgs/openrgb-git.nix              { };
       piper-git                = pkgs.callPackage ./pkgs/piper-git.nix                { };
       plymouth-spinnerv2-theme = pkgs.callPackage ./pkgs/plymouth-spinnerv2-theme.nix { };
+      syrics                   = pkgs.callPackage ./pkgs/syrics.nix                   { };
       weather4bar              = pkgs.callPackage ./pkgs/weather4bar.nix              { };
     });
   };
