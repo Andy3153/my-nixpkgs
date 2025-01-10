@@ -12,14 +12,14 @@
 pkgs.libratbag.overrideAttrs (_:
 {
   pname   = "libratbag-git";
-  version = "0-unstable-2024-06-04";
+  version = "0-unstable-2025-01-10";
 
   src = pkgs.fetchFromGitHub
   {
     owner = "libratbag";
     repo  = "libratbag";
-    rev   = "1c9662043f4a11af26537e394bbd90e38994066a";
-    hash  = "sha256-IpN97PPn9p1y+cAh9qJAi5f4zzOlm6bjCxRrUTSXNqM=";
+    rev   = "df3c73e95841273908410ed1c563d8ed4ec21edd";
+    hash  = "sha256-hI6Xu1RtyJsNga7BaMjQixnyv/V5qkp75FAFcqrvaHE=";
   };
 
   meta.description = "Configuration library for gaming mice (latest Git commit)";
