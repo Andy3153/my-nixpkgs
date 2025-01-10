@@ -12,14 +12,14 @@
 pkgs.piper.overrideAttrs (_:
 {
   pname   = "piper-git";
-  version = "0-unstable-2024-08-23";
+  version = "0-unstable-2025-01-10";
 
   src = pkgs.fetchFromGitHub
   {
     owner = "libratbag";
     repo  = "piper";
-    rev   = "93a5a004766e37a801940cc3317c4aea9d2a6cfd";
-    hash  = "sha256-a+HBxFYzRfcLPR7Ut+sFEh9Aj8b+Xbqhp6TGGCVbCb8=";
+    rev   = "3e5a6b96d09f7a65242ba90cbfbba64fc673b9ff";
+    hash  = "sha256-e0Ti8PfH/op+LquEi/5Rjv8zO8Z49m1S2QNHL5XXajc=";
   };
 
   mesonFlags = [ "-Druntime-dependency-checks=false" ];
