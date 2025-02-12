@@ -9,6 +9,9 @@
   pkgs,
 }:
 
+let
+  description = pkgs.piper.meta.description;
+in
 pkgs.piper.overrideAttrs (_:
 {
   pname   = "piper-git";
@@ -24,5 +27,5 @@ pkgs.piper.overrideAttrs (_:
 
   mesonFlags = [ "-Druntime-dependency-checks=false" ];
 
-  meta.description = "GTK frontend for ratbagd mouse config daemon (latest Git commit)";
+  meta.description = "${description} (latest Git commit)";
 })
