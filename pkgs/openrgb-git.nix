@@ -7,12 +7,13 @@
 
 {
   pkgs,
+  my-pkgs
 }:
 
 let
   description = pkgs.openrgb.meta.description;
 in
-pkgs.openrgb.overrideAttrs (_:
+(pkgs.openrgb.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
 {
   pname   = "openrgb-git";
   version = "0-unstable-2025-02-11";
