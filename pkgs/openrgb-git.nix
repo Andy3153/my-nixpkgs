@@ -6,6 +6,7 @@
 ##
 
 {
+  lib,
   pkgs,
   my-pkgs
 }:
@@ -25,6 +26,13 @@ in
     rev   = "f8b8da47a3df4efe7e2a44965f58b2e52330ecaa";
     hash  = "sha256-MvsrE9Qj7RS6cK2l+UBjW5WxjMs9ZmxqNZDEG1EvqAQ=";
   };
+
+  postPatch =
+  ''
+    patchShebangs scripts/build-udev-rules.sh
+    substituteInPlace scripts/build-udev-rules.sh \
+      --replace "/usr/bin/env chmod" "${lib.getExe' pkgs.coreutils "chmod"}"
+  '';
 
   meta.description = "${description} (latest Git commit)";
 })
