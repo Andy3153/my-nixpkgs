@@ -1,16 +1,26 @@
 {
   description = "Andy3153's collection of packages for Nix";
+
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-  outputs = { nixpkgs, ... }:
+  outputs =
+  {
+    self,
+    nixpkgs,
+    ...
+  }:
   let
     # {{{ Variables
-  supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-  forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f { pkgs = import nixpkgs { inherit system; }; });
+    supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+    forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f
+    {
+      pkgs    = import nixpkgs { inherit system; };
+      my-pkgs = self.outputs.packages.${system};
+    });
     # }}}
   in
   {
-    packages = forEachSupportedSystem ({ pkgs }:
+    packages = forEachSupportedSystem ({ pkgs, my-pkgs }:
     {
       batnotifsd               = pkgs.callPackage ./pkgs/batnotifsd.nix               { };
       libratbag-git            = pkgs.callPackage ./pkgs/libratbag-git.nix            { };
