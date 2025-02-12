@@ -9,6 +9,9 @@
   pkgs,
 }:
 
+let
+  description = pkgs.libratbag.meta.description;
+in
 pkgs.libratbag.overrideAttrs (_:
 {
   pname   = "libratbag-git";
@@ -22,5 +25,5 @@ pkgs.libratbag.overrideAttrs (_:
     hash  = "sha256-hI6Xu1RtyJsNga7BaMjQixnyv/V5qkp75FAFcqrvaHE=";
   };
 
-  meta.description = "Configuration library for gaming mice (latest Git commit)";
+  meta.description = "${description} (latest Git commit)";
 })
