@@ -6,29 +6,24 @@
 ##
 
 {
-  lib,
   pkgs,
 }:
 
-pkgs.openrgb-with-all-plugins.overrideAttrs (_:
+let
+  description = pkgs.openrgb.meta.description;
+in
+pkgs.openrgb.overrideAttrs (_:
 {
   pname   = "openrgb-git";
-  version = "0-unstable-2025-01-10";
+  version = "0-unstable-2025-02-11";
 
   src = pkgs.fetchFromGitLab
   {
     owner = "CalcProgrammer1";
     repo  = "OpenRGB";
-    rev   = "59e303c882096cc04d635740b77f330744e168e4";
-    hash  = "sha256-ChOmRukf+uGHbha75q/PphkeGFGGvKCoFZw26fldFtE=";
+    rev   = "f8b8da47a3df4efe7e2a44965f58b2e52330ecaa";
+    hash  = "sha256-MvsrE9Qj7RS6cK2l+UBjW5WxjMs9ZmxqNZDEG1EvqAQ=";
   };
 
-  postPatch =
-  ''
-    patchShebangs scripts/build-udev-rules.sh
-    substituteInPlace scripts/build-udev-rules.sh \
-      --replace "/usr/bin/env chmod" "${lib.getExe' pkgs.coreutils "chmod"}"
-  '';
-
-  meta.description = "Open source RGB lighting control (latest Git commit)";
+  meta.description = "${description} (latest Git commit)";
 })
