@@ -22,13 +22,14 @@
   {
     packages = forEachSupportedSystem ({ pkgs, my-pkgs }:
     {
-      batnotifsd               = pkgs.callPackage ./pkgs/batnotifsd.nix               { };
-      libratbag-git            = pkgs.callPackage ./pkgs/libratbag-git.nix            { };
-      openrgb-git              = pkgs.callPackage ./pkgs/openrgb-git.nix              { };
-      piper-git                = pkgs.callPackage ./pkgs/piper-git.nix                { };
-      plymouth-spinnerv2-theme = pkgs.callPackage ./pkgs/plymouth-spinnerv2-theme.nix { };
-      syrics                   = pkgs.callPackage ./pkgs/syrics.nix                   { };
-      weather4bar              = pkgs.callPackage ./pkgs/weather4bar.nix              { };
+      batnotifsd                      = pkgs.callPackage ./pkgs/batnotifsd.nix                 { };
+      libratbag-git                   = pkgs.callPackage ./pkgs/libratbag-git.nix              { };
+      openrgb-git                     = pkgs.callPackage ./pkgs/openrgb-git.nix                { };
+      openrgb-plugin-effects-git      = pkgs.callPackage ./pkgs/openrgb-plugin-effects-git.nix { my-pkgs = my-pkgs; };
+      piper-git                       = pkgs.callPackage ./pkgs/piper-git.nix                  { };
+      plymouth-spinnerv2-theme        = pkgs.callPackage ./pkgs/plymouth-spinnerv2-theme.nix   { };
+      syrics                          = pkgs.callPackage ./pkgs/syrics.nix                     { };
+      weather4bar                     = pkgs.callPackage ./pkgs/weather4bar.nix                { };
     });
   };
 }
