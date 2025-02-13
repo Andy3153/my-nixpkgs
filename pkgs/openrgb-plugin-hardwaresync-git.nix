@@ -23,7 +23,7 @@ in
     owner = "OpenRGBDevelopers";
     repo  = "OpenRGBHardwareSyncPlugin";
     rev   = "506f206fc14a6967528158c9ac1376c9463549e6";
-    hash  = "sha256-pMIc5WK/cum8tJ2LwIlQ8WkzgssO8pkFzCJ5wQLoZHg=";
+    hash  = "sha256-7RrNVqHV2CDTHWtCaDyDoTujyuXNIjZobsnemTpkgKI=";
   };
 
   postPatch =

@@ -23,7 +23,7 @@ in
     owner = "OpenRGBDevelopers";
     repo  = "OpenRGBEffectsPlugin";
     rev   = "188bfc135df42e96a0658dc021204e08676b3025";
-    hash  = "sha256-FB+bppmoszmgIYl0ZhAU8eezOx3VTaTJ5R/2dJyOYoQ=";
+    hash  = "sha256-HQdk262k5QuW4RK4LTsVdNOI4WPEGvQl5hUfh7RtErE=";
   };
 
   meta.description = "${description} (latest Git commit)";

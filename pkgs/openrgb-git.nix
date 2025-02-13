@@ -17,14 +17,14 @@ in
 (pkgs.openrgb.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
 {
   pname   = "openrgb-git";
-  version = "0-unstable-2025-02-11";
+  version = "0-unstable-2025-02-12";
 
   src = pkgs.fetchFromGitLab
   {
     owner = "CalcProgrammer1";
     repo  = "OpenRGB";
-    rev   = "f8b8da47a3df4efe7e2a44965f58b2e52330ecaa";
-    hash  = "sha256-MvsrE9Qj7RS6cK2l+UBjW5WxjMs9ZmxqNZDEG1EvqAQ=";
+    rev   = "d1cdea47c797ecf669ae1a5420e33c80a79558ba";
+    hash  = "sha256-SlkstIMQL1YO1EjeEiBrbikpj9muusVxQJlE1TD/mjQ=";
   };
 
   postPatch =
