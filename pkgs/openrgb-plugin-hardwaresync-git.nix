@@ -11,27 +11,30 @@
 }:
 
 let
-  description = pkgs.openrgb-plugin-hardwaresync.meta.description;
+  origPkg     = pkgs.openrgb-plugin-hardwaresync;
+  description = origPkg.meta.description;
 in
-(pkgs.openrgb-plugin-hardwaresync.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
-{
-  pname   = "openrgb-plugin-hardwaresync-git";
-  version = "0-unstable-2025-02-07";
+origPkg.override { openrgb = my-pkgs.openrgb-git; }
 
-  src = pkgs.fetchFromGitLab
-  {
-    owner = "OpenRGBDevelopers";
-    repo  = "OpenRGBHardwareSyncPlugin";
-    rev   = "506f206fc14a6967528158c9ac1376c9463549e6";
-    hash  = "sha256-7RrNVqHV2CDTHWtCaDyDoTujyuXNIjZobsnemTpkgKI=";
-  };
-
-  postPatch =
-  ''
-    rm -rf OpenRGB
-    ln -s ${my-pkgs.openrgb-git.src} OpenRGB
-    rm -r dependencies/lhwm-cpp-wrapper
-  '';
-
-  meta.description = "${description} (latest Git commit)";
-})
+#(origPkg.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
+#{
+#  pname   = "openrgb-plugin-hardwaresync-git";
+#  version = "0-unstable-2025-02-25";
+#
+#  src = pkgs.fetchFromGitLab
+#  {
+#    owner = "OpenRGBDevelopers";
+#    repo  = "OpenRGBHardwareSyncPlugin";
+#    rev   = "3a6b65fa1bdc716f88f4a5857b0e61873231363a";
+#    hash  = "sha256-HhREYstjUIe0QWjFwLJ0Q8iJLjFvFrEAJ31MpZtPLq8=";
+#  };
+#
+#  postPatch =
+#  ''
+#    rm -rf OpenRGB
+#    ln -s ${my-pkgs.openrgb-git.src} OpenRGB
+#    rm -rf dependencies/lhwm-cpp-wrapper
+#  '';
+#
+#  meta.description = "${description} (latest Git commit)";
+#})

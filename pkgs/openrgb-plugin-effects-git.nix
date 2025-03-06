@@ -11,20 +11,34 @@
 }:
 
 let
-  description = pkgs.openrgb-plugin-effects.meta.description;
+  origPkg     = pkgs.openrgb-plugin-effects;
+  description = origPkg.meta.description;
 in
-(pkgs.openrgb-plugin-effects.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
-{
-  pname   = "openrgb-plugin-effects-git";
-  version = "0-unstable-2025-02-07";
+origPkg.override { openrgb = my-pkgs.openrgb-git; }
 
-  src = pkgs.fetchFromGitLab
-  {
-    owner = "OpenRGBDevelopers";
-    repo  = "OpenRGBEffectsPlugin";
-    rev   = "188bfc135df42e96a0658dc021204e08676b3025";
-    hash  = "sha256-HQdk262k5QuW4RK4LTsVdNOI4WPEGvQl5hUfh7RtErE=";
-  };
-
-  meta.description = "${description} (latest Git commit)";
-})
+#(origPkg.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
+#{
+#  pname   = "openrgb-plugin-effects-git";
+#  version = "0-unstable-2025-02-28";
+#
+#  src = pkgs.fetchFromGitLab
+#  {
+#    owner = "OpenRGBDevelopers";
+#    repo  = "OpenRGBEffectsPlugin";
+#    rev   = "e0147bbe0451eb1758e290146e3092f49b09cf7c";
+#    hash  = "sha256-HhREYstjUIe0QWjFwLJ0Q8iJLjFvFrEAJ31MpZtPLq8=";
+#  };
+#
+#  nativeBuildInputs = origPkg.nativeBuildInputs ++
+#  [
+#    pkgs.git
+#  ];
+#
+#  postPatch =
+#  ''
+#    rm -rf OpenRGB
+#    ln -s ${my-pkgs.openrgb-git.src} OpenRGB
+#  '';
+#
+#  meta.description = "${description} (latest Git commit)";
+#})

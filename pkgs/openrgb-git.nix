@@ -12,19 +12,20 @@
 }:
 
 let
-  description = pkgs.openrgb.meta.description;
+  origPkg     = pkgs.openrgb;
+  description = origPkg.meta.description;
 in
-(pkgs.openrgb.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
+(origPkg.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
 {
   pname   = "openrgb-git";
-  version = "0-unstable-2025-02-12";
+  version = "0-unstable-2025-03-05";
 
   src = pkgs.fetchFromGitLab
   {
     owner = "CalcProgrammer1";
     repo  = "OpenRGB";
-    rev   = "d1cdea47c797ecf669ae1a5420e33c80a79558ba";
-    hash  = "sha256-SlkstIMQL1YO1EjeEiBrbikpj9muusVxQJlE1TD/mjQ=";
+    rev   = "3ce3447b655b5381291b48a09d5ffe03606619da";
+    hash  = "sha256-HhREYstjUIe0QWjFwLJ0Q8iJLjFvFrEAJ31MpZtPLq8=";
   };
 
   postPatch =
