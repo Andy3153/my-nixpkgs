@@ -14,11 +14,12 @@ let
   origPkg     = pkgs.openrgb-plugin-hardwaresync;
   description = origPkg.meta.description;
 in
-origPkg.override { openrgb = my-pkgs.openrgb-git; }
 
-#(origPkg.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
+origPkg.override { openrgb = my-pkgs.openrgb; }
+
+#(origPkg.override { openrgb = my-pkgs.openrgb; }).overrideAttrs (_:
 #{
-#  pname   = "openrgb-plugin-hardwaresync-git";
+#  pname   = "openrgb-plugin-hardwaresync";
 #  version = "0-unstable-2025-02-25";
 #
 #  src = pkgs.fetchFromGitLab
@@ -26,15 +27,8 @@ origPkg.override { openrgb = my-pkgs.openrgb-git; }
 #    owner = "OpenRGBDevelopers";
 #    repo  = "OpenRGBHardwareSyncPlugin";
 #    rev   = "3a6b65fa1bdc716f88f4a5857b0e61873231363a";
-#    hash  = "sha256-HhREYstjUIe0QWjFwLJ0Q8iJLjFvFrEAJ31MpZtPLq8=";
+#    hash  = "sha256-lK/14uvsKmUEso0gY135Lpe0s2S3BVFBhZGC4sD9WrY=";
 #  };
-#
-#  postPatch =
-#  ''
-#    rm -rf OpenRGB
-#    ln -s ${my-pkgs.openrgb-git.src} OpenRGB
-#    rm -rf dependencies/lhwm-cpp-wrapper
-#  '';
 #
 #  meta.description = "${description} (latest Git commit)";
 #})

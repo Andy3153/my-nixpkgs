@@ -15,17 +15,18 @@ let
   origPkg     = pkgs.openrgb;
   description = origPkg.meta.description;
 in
-(origPkg.override { openrgb = my-pkgs.openrgb-git; }).overrideAttrs (_:
+
+(origPkg.override { openrgb = my-pkgs.openrgb; }).overrideAttrs (_: rec
 {
-  pname   = "openrgb-git";
-  version = "0-unstable-2025-03-05";
+  pname   = "openrgb";
+  version = "1.0rc1";
 
   src = pkgs.fetchFromGitLab
   {
     owner = "CalcProgrammer1";
     repo  = "OpenRGB";
-    rev   = "3ce3447b655b5381291b48a09d5ffe03606619da";
-    hash  = "sha256-HhREYstjUIe0QWjFwLJ0Q8iJLjFvFrEAJ31MpZtPLq8=";
+    rev   = "release_candidate_${version}";
+    hash  = "sha256-jKAKdja2Q8FldgnRqOdFSnr1XHCC8eC6WeIUv83e7x4=";
   };
 
   postPatch =
@@ -35,5 +36,5 @@ in
       --replace "/usr/bin/env chmod" "${lib.getExe' pkgs.coreutils "chmod"}"
   '';
 
-  meta.description = "${description} (latest Git commit)";
+  meta.description = "${description} (1.0 RC1)";
 })

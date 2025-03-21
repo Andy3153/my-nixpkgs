@@ -9,8 +9,8 @@
   my-pkgs
 }:
 
-my-pkgs.openrgb-git.withPlugins
+my-pkgs.openrgb.withPlugins
 [
-  my-pkgs.openrgb-plugin-effects-git
-  my-pkgs.openrgb-plugin-hardwaresync-git
+  my-pkgs.openrgb-plugin-effects
+  my-pkgs.openrgb-plugin-hardwaresync
 ]
