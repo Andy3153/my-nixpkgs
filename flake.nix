@@ -23,6 +23,7 @@
     packages = forEachSupportedSystem ({ pkgs, my-pkgs }:
     {
       batnotifsd                  = pkgs.callPackage ./pkgs/batnotifsd.nix                  { };
+      beammp-launcher             = pkgs.callPackage ./pkgs/beammp-launcher.nix             { };
       libratbag-git               = pkgs.callPackage ./pkgs/libratbag-git.nix               { };
       openrgb                     = pkgs.callPackage ./pkgs/openrgb.nix                     { my-pkgs = my-pkgs; };
       openrgb-plugin-effects      = pkgs.callPackage ./pkgs/openrgb-plugin-effects.nix      { my-pkgs = my-pkgs; };
