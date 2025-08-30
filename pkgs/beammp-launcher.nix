@@ -21,14 +21,14 @@
 stdenv.mkDerivation rec
 {
   pname   = "beammp-launcher";
-  version = "2.4.0";
+  version = "2.5.1";
 
   src = fetchFromGitHub
   {
     owner = "BeamMP";
     repo  = pname;
     rev   = "v${version}";
-    hash  = "sha256-aAQmgK03a3BY4YWuDyTmJzcePchD74SXfbkHwnaOYW8=";
+    hash  = "sha256-c509/bfPrQEJW39WmjyJ4vQoPPFS0MbTCgszIoTNA/Q=";
   };
 
   nativeBuildInputs =
