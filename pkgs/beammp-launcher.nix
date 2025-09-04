@@ -9,54 +9,68 @@
   stdenv,
   fetchFromGitHub,
   lib,
+  copyDesktopItems,
+  installShellFiles,
+  makeDesktopItem,
 
   cmake,
-  vcpkg,
   curl,
   httplib,
+  nlohmann_json,
   openssl,
-  nlohmann_json
 }:
 
-stdenv.mkDerivation rec
-{
-  pname   = "beammp-launcher";
+stdenv.mkDerivation (finalAttrs: {
+  pname = "beammp-launcher";
   version = "2.5.1";
 
-  src = fetchFromGitHub
-  {
+  src = fetchFromGitHub {
     owner = "BeamMP";
-    repo  = pname;
-    rev   = "v${version}";
-    hash  = "sha256-c509/bfPrQEJW39WmjyJ4vQoPPFS0MbTCgszIoTNA/Q=";
+    repo = "BeamMP-Launcher";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-c509/bfPrQEJW39WmjyJ4vQoPPFS0MbTCgszIoTNA/Q=";
   };
 
-  nativeBuildInputs =
-  [
+  strictDeps = true;
+
+  nativeBuildInputs = [
+    copyDesktopItems
+    installShellFiles
+
     cmake
-    vcpkg
-    curl
-    httplib
-    openssl
-    nlohmann_json
   ];
 
-  cmakeBuildType = "Release";
+  buildInputs = [
+    curl
+    httplib
+    nlohmann_json
+    openssl
+  ];
 
-  installPhase =
-  ''
-    mkdir -p $out/bin
-    install -Dm755 BeamMP-Launcher $out/bin
+  desktopItems = [
+    (makeDesktopItem {
+      categories = [ "Game" ];
+      comment = "Launcher for the BeamMP mod for BeamNG.drive";
+      desktopName = "BeamMP-Launcher";
+      exec = "BeamMP-Launcher";
+      name = "BeamMP-Launcher";
+      terminal = true;
+    })
+  ];
+
+  installPhase = ''
+    runHook preInstall
+    installBin "BeamMP-Launcher"
+    copyDesktopItems
+    runHook postInstall
   '';
 
-  meta =
-  {
-    description = "Official BeamMP Launcher.";
-    homepage    = "https://github.com/BeamMP/${pname}";
-    license     = lib.licenses.agpl3Only;
+  meta = {
+    description = "Launcher for the BeamMP mod for BeamNG.drive";
+    homepage = "https://github.com/BeamMP/BeamMP-Launcher";
+    license = lib.licenses.agpl3Only;
     mainProgram = "BeamMP-Launcher";
-
     maintainers = [ lib.maintainers.Andy3153 ];
-    platforms   = lib.platforms.linux;
+    platforms = lib.platforms.linux;
   };
-}
+})
