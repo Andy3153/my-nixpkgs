@@ -24,10 +24,6 @@
     {
       batnotifsd                  = pkgs.callPackage ./pkgs/batnotifsd.nix                  { };
       libratbag-git               = pkgs.callPackage ./pkgs/libratbag-git.nix               { };
-      openrgb                     = pkgs.callPackage ./pkgs/openrgb.nix                     { my-pkgs = my-pkgs; };
-      openrgb-plugin-effects      = pkgs.callPackage ./pkgs/openrgb-plugin-effects.nix      { my-pkgs = my-pkgs; };
-      openrgb-plugin-hardwaresync = pkgs.callPackage ./pkgs/openrgb-plugin-hardwaresync.nix { my-pkgs = my-pkgs; };
-      openrgb-with-all-plugins    = pkgs.callPackage ./pkgs/openrgb-with-all-plugins.nix    { my-pkgs = my-pkgs; };
       piper-git                   = pkgs.callPackage ./pkgs/piper-git.nix                   { };
       plymouth-spinnerv2-theme    = pkgs.callPackage ./pkgs/plymouth-spinnerv2-theme.nix    { };
       syrics                      = pkgs.callPackage ./pkgs/syrics.nix                      { };
