@@ -1,5 +1,9 @@
 <!-- vim: set fenc=utf-8 ts=2 sw=0 sts=0 sr et si tw=0 fdm=marker fmr={{{,}}}: -->
 
+# ARCHIVED
+### All relevant work from this repo has been merged into [Andy3153/nixos-rice](https://github.com/Andy3153/nixos-rice).
+
+
 # my-nixpkgs
 This is my collection of packages for Nix.
 
